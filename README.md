@@ -15,6 +15,20 @@ Acá estan las instrucciones (https://getcomposer.org/download/)
     php composer.phar update
 
 
+## Referencia DI en PHP
+
+
+Acá esta la documentación sobre DI
+https://php-di.org/doc/getting-started.html
+
+Y acá esta la implementación para ser usada junto a Slim
+https://php-di.org/doc/frameworks/slim.html
+
+## Referencia de Twig
+
+https://twig.symfony.com/doc/3.x/api.html
+
+
 ## Referencia de mink dentro de behat
 
 http://mink.behat.org/en/latest/

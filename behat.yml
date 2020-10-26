@@ -1,0 +1,13 @@
+default:
+  suites:
+    web:
+      paths:
+        - "%paths.base%/features/web"
+      contexts:
+        - WebFeatureContext
+        - Behat\MinkExtension\Context\MinkContext
+
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://localhost:8080/'
+      goutte: ~

@@ -1,0 +1,22 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Cursos\\": "src/",
+            "Tests\\": "tests/",
+            "BehatContexts\\": "features/bootstrap/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "behat/behat": "*",
+        "behat/mink-extension": "*",
+        "behat/mink-goutte-driver": "*"
+    },
+    "require": {
+        "slim/slim": "*",
+        "slim/psr7": "*",
+        "php-di/php-di": "*",
+        "twig/twig": "^3.0",
+        "php-di/slim-bridge": "^3.0"
+    }
+}

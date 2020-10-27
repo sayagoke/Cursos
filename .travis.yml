@@ -3,7 +3,9 @@ php:
   - "7.4"
 before_script:
   - composer install --no-interaction --prefer-source
-  - php -S localhost:8080 public/index.php
+  - nohup php -S localhost:8080 public/index.php &
+  - sleep 5
 script:
   - ./vendor/bin/behat
   - ./vendor/bin/phpunit tests
+  - pkill php

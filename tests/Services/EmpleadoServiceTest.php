@@ -64,14 +64,35 @@ final class EmpleadoServiceTest extends \PHPUnit\Framework\TestCase {
 
     public function testICanupdateARequest() {
         $empleado1 = $this->service->register("Email5@Emai3l.com","Pedro5","Garcia5","Programador","PGS",1);
-        $empleadoNuevo= ["email"=>"Email6@Emai3l.com","nombre"=>"Pedro6","apellido"=>"Garcia6","puesto"=>"Programador","programa"=>"PGS","activo"=>1];
-        
-        
-        $r = $this->service->update($empleado2);
 
-        $this->assertTrue($r);
+        $r = $this->service->update($empleado1->getemail(),"Pedro6","Garcia6","Programador","PGS",1);
+
+        $this->assertEquals("Pedro6", $r->getNombre());
+        $this->assertEquals("Garcia6", $r->getApellido());
+        $this->assertEquals("Programador", $r->getPuesto());
+        $this->assertEquals("PGS", $r->getPrograma());
+
     }
 
+    public function testICanDeleteARequest() {
+        $empleado1 = $this->service->register("Email6@Emai3l.com","Pedro6","Garcia6","Programador","PGS",1);
+
+        $r = $this->service->delete($empleado1);
+
+        $this->assertTrue($r);
+
+    }
+
+    public function testICanfindoneRequest() {
+        $empleado1 = $this->service->register("Email7@Emai3l.com","Pedro7","Garcia7","Programador","PGS",1);
+
+        $r = $this->service->findOne($empleado1->getEmail());
+
+        $this->assertTrue($r instanceof \Cursos\Models\Employee);
+
+        $this->assertEquals("Pedro7", $r->getNombre());
+
+    }
 
 
 }
